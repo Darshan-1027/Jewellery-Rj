@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        {% load static %}
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title>Profile</title>
+        <link rel="stylesheet" type="text/css" href="static/css/Profile.css"> 
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    </head>
+    <body>
+
+        <a href="/" style="color: #EDDDE0;"><i class="fa-solid fa-circle-left" id="back"></i></a>
+        <div class="card" id="Card">
+            <div class="head">
+                <img src="static/img/download.jpeg" width="200px" style="border-radius: 100%; height: 180px;">
+                <h1>{{ request.session.fname }}</h1>
+                
+            </div>
+            <hr>
+            <div class="profiledata">
+                <div class="part1">
+                    <div class="data">
+                        <h2> Full Name :{{ request.session.fname }} {{ request.session.lname }} </h2>
+                    </div>
+                    <br><br><br>
+                    <div class="data">
+                        <h2> Email ID  : {{ request.session.email }}  </h2>
+                    </div>
+                    <br><br><br>
+                    <div class="data">
+                        <h2> Phone No : {{ request.session.phone }} </h2>
+                    </div>
+                    <br><br><br>
+                    <div class="data">
+                        <h2> Address : {{ request.session.address }} </h2>
+                    </div>
+                    <br><br><br>
+                </div>
+                    
+                </div>
+                <button onclick="SureLogout();">Logout <i class="fa-solid fa-right-from-bracket"></i></button>
+            </div>
+            
+            
+        </div>
+        <div class="Logout" id="Logout">
+            <i class="fa-solid fa-rectangle-xmark" id="close" onclick="Close();"></i>
+            <h3>Are You Sure For Logout ?</h3>
+            <br><br>
+            <div class="btn">
+                <a href="/logout">Yes</a>
+            </div>
+        </div>
+        <script src="static/js/Profile.js"></script>
+    </body>
+</html>

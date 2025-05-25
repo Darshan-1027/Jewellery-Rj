@@ -1,0 +1,49 @@
+        <head>
+        {% load static %}
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title> RJ CREATION </title>
+        <link rel="stylesheet" href="{% static 'css/Header.css' %}" type="text/css">
+        <link rel="icon" href="{% static 'img/Logo.png' %}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    </head>
+        <div class="header">
+            <div class="first">
+               <img src="{% static 'img/Logo.png' %}" alt="Logo"> 
+               
+               <section class="search">
+                <form method="post" action="/search">
+                    {% csrf_token %}
+                <i class="fa-solid fa-magnifying-glass"></i><input type="Search" placeholder="Search Jewellery" name="search"></section>
+                </form>
+                <section class="icons">
+                    <a href="#info" title="About"><i class="fa-solid fa-circle-info"></i></a>
+                    <a href="/cart" title="shopping"><i class="fa-solid fa-cart-shopping"></i></a>
+                    {% if request.session.fname %}
+                    <a href="/profile" title="Profile"><i class="fa-solid fa-circle-user"></i></a>
+                    {% else %}
+                    <a href="/login" title="Profile"><i class="fa-solid fa-circle-user"></i></a>
+                    {% endif %}
+                    
+                </section>
+            </div>
+            <div class="second">
+                <a href="Category.html">All Jewellery</a>
+                <a href="">Earrings</a>
+                <a href="">Wedding</a>
+                <a href="">Rings</a>
+                <a href="">Necklaces</a>
+                <a href="">Pandels</a>
+                <section class="search">
+                <form>
+                <i class="fa-solid fa-magnifying-glass"></i><input type="Search" placeholder="Search Jewellery"> </form>
+            </section>
+            <select>
+                <option selected disabled>Category</option>
+                <option></option>
+            </select>
+                
+            </div>
+            
+            
+        </div>

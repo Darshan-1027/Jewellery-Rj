@@ -1,0 +1,135 @@
+*{
+
+   margin: 0;
+   padding: 0;
+}
+body{
+
+    background-color:  #ffebd0;;
+    color:  #288683;
+    transition: 0.9s;
+}
+
+.login{
+
+    background-color: #288683;
+    color: #ffebd0;
+    margin: auto;
+    width: 30%;
+    margin-top:150px;
+    padding: 20px;
+    border-radius: 20px;
+    
+}
+.logo{
+
+    text-align: center;
+}
+img{
+
+     height: 80px; 
+
+}
+.data{
+
+    padding: 20px;
+
+    
+}
+.data section{
+
+    background-color:  #ffebd0;
+    color: #288683;
+    height: 40px;
+    padding: 5px;
+    border-radius: 8px;
+}
+.data input{
+    width: 90%;
+    height: 100%;
+    border: none;
+    background: none;
+    outline: none;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    padding-left: 10px;
+    color: #288683;
+   
+}
+::placeholder{
+
+    color: #288683;
+    opacity: 0.8;
+}
+#eye{
+
+    position: relative;
+    right: 0;
+}
+#eye:hover{
+
+    cursor: pointer;
+}
+#password{
+    width:82%;
+}
+
+form{
+
+    text-align: center;
+}
+a{
+    font-size: 1.4rem;
+}
+span{
+    font-size: 1.5rem;
+}
+button{
+
+ width: 60%;
+ height: 30px;
+ border-radius: 5px;
+ color:#288683 ;
+ background-color: #ffebd0;
+ font-size: 1.2rem;
+ font-weight: 600;
+ 
+
+}
+button:hover{
+
+    cursor: pointer;
+    opacity: 0.6;
+}
+
+@media (max-width:1000px){
+
+      .login{
+
+        width: 80%;
+        margin-top: 100px;
+        min-width: 85%;
+    
+        
+      }
+      h1{
+
+        font-size: 1.5rem;
+      }
+      .data section{
+
+        width: 100%;
+        display: flex;
+        align-items: center;
+
+      }
+      a{
+
+        font-size: 0.7rem;
+      }
+      spam{
+        font-size: 0.5rem;
+      }
+      
+
+}

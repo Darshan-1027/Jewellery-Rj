@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RJ Collection</title>
+    <link rel="stylesheet" href="{% static 'css/Login.css' %}">
+    <link rel="icon" href="{% static 'img/logo.png' %}">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+    <div class="login">
+
+        <div class="logo">
+            <img src="{% static 'img/logo.png' %}" alt="Logo">
+            <h1>Welcome To RJ Collection</h1>
+            <br>
+            {% if messages %}
+            {% for i in messages %}
+            <span style="color: rgb(3, 255, 19);"><strong>{{ i }}</strong></span>
+            {% endfor %}
+            {% endif %}
+        </div>
+        <div class="data">
+            <form method="post" action="/logincheck">
+                {% csrf_token %}
+              <section> <i class="fa-solid fa-envelope"></i><input type="text" placeholder="Email id" name="email" required ></section>
+               <br>
+               <br>
+             <section> <i class="fa-solid fa-lock"></i> <input type="password" placeholder="Password" id="password" name="password" required><i class="fa-solid fa-eye-slash" id="eye" onclick="Eyeclick();"></i></section>
+             <br><br>
+             <a href="">Forgate Password?</a> |<a href="/register"> I don't Have An Account</a>
+             <br><br><br>
+             <button>Submit</button>
+            </form>
+        </div>
+        
+    </div>
+    <script src="{% static 'js/Login.js' %}"></script>
+</body>
+</html>

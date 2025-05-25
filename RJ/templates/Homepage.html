@@ -1,0 +1,137 @@
+<!Doctype html>
+<html>
+    <head>
+        {% load static %}
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title> RJ CREATION </title>
+        <link rel="stylesheet" href="{% static 'css/Homepage.css' %}" type="text/css">
+        <link rel="icon" href="static/img/Logo.png">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    </head>
+    <body>
+        <div class="header">
+            <div class="first">
+               <img src="static/img/Logo.png" alt="Logo"> 
+               
+               <section class="search">
+                <form method="post" action="/search">
+                    {% csrf_token %}
+                <i class="fa-solid fa-magnifying-glass"></i><input type="Search" placeholder="Search Jewellery" name="search"></section>
+                </form>
+                <section class="icons">
+                    <a href="#info" title="About"><i class="fa-solid fa-circle-info"></i></a>
+                    <a href="/cart" title="shopping"><i class="fa-solid fa-cart-shopping"></i></a>
+                    {% if request.session.fname %}
+                    <a href="/profile" title="Profile"><i class="fa-solid fa-circle-user"></i></a>
+                    {% else %}
+                    <a href="/login" title="Profile"><i class="fa-solid fa-circle-user"></i></a>
+                    {% endif %}
+
+                    
+                </section>
+            </div>
+            <div class="second">
+
+                {% for i in category|slice:":8" %}
+                    <a href="{% url 'products_by_category' i.id %}">{{ i.Name }}</a>
+                {% endfor %}
+
+                {% if category|length > 8 %}
+                <a href="/">More++</a>
+                {% endif %}
+
+
+                <section class="search">
+                <form>
+                <i class="fa-solid fa-magnifying-glass"></i><input type="Search" placeholder="Search Jewellery"> </form>
+            </section>
+            <select>
+                <option selected disabled>Category</option>
+                <option></option>
+            </select>
+                
+            </div>
+            
+            
+        </div>
+        
+        <div class="banner">
+
+           
+            <video class="responsive-video" src="{% static 'img/video2.mp4' %}" muted autoplay loop width="100%"></video>
+
+
+       
+
+        </div>
+        <h1>Find Your Perfect Match</h1>
+        <p>Different categorys</p>
+        <div class="category">
+            {% for i in category %}
+            <div class="card">
+                <a href="{% url 'products_by_category' i.id %}"><img src="{{ i.Image.url }}" alt="Earrings"></a>
+                <h1>{{ i.Name }}</h1>
+            </div>
+             {% endfor %}
+             
+        </div>
+        <div class="banner">
+
+            <img src="{% static 'img/ad.jpg '%}" alt="ad" width="100%" height="500px" style="border-radius: 10px; padding: 5px;">
+            
+        </div>
+        
+        <footer id="info">
+
+            <div class="logo">
+                <a href="/"><img src="static/img/Logo.png"></a>
+            </div>
+            <div class="data">
+                <div class="cat">
+                    <h1>Category</h1>
+                   {% for i in category %}
+                    <a href="{% url 'products_by_category' i.id %}">{{ i.Name }}</a>
+                    {% endfor %}
+                    
+                    
+                    
+                </div>
+                <div class="cat">
+                    <h1>Informaction</h1>
+                    <a href="">Privacy Policy</a>
+                    <a href="">Terms & Conditions</a>
+                    <a href="">Payment Options</a>
+                    <a href="">Returning</a>  
+                     
+                    
+                    
+                </div>
+                
+                 <div class="contact">
+                <h1>Contact Us</h1>
+                <hr>
+                <br><br>
+                 <a href="tel:+919924342512"><i class="fa-solid fa-square-phone" title="Phone No"></i> +91 9924342512</a>
+                 <br><br>
+                 
+                 <h2> Chat On Whatsapp</h2>
+                 <br>
+                <a href="https://wa.me/919924342512"><i class="fa-brands fa-whatsapp" title="Whatsapp Number"></i> 9924342512</a>
+                <br>
+                <br>
+                <h1>Social</h1>
+                <hr>
+                <br>
+                <a href="https://www.instagram.com/r_j_creation_2511?igsh=YjVpMzVuNmNiYWhj" title="Instgram"><i class="fa-brands fa-instagram"> Instgram</i></a>
+                <br><br>
+                <a href="mailto:example@example.com"><i class="fa-solid fa-square-envelope"></i> abhi@gmail.com</a>
+                 <br>
+                 <br>
+                </div>
+            </div>
+           
+        </footer>
+<script src="{%static '/js/Homepage.js'%}"></script>
+    </body>
+</html>

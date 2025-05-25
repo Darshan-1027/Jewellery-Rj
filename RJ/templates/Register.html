@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RJ Collection</title>
+    <link rel="stylesheet" href="{% static 'css/Register.css' %}">
+    <link rel="icon" href="{% static 'img/logo.png' %}">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+    <div class="login">
+
+        <div class="logo">
+            <img src="{% static 'img/logo.png' %}" alt="Logo">
+            <h1>Welcome To RJ Collection</h1>
+            <br>
+            <h2>Registration</h2>
+            <br>
+            {% if messages %}
+            {% for i in messages %}
+            <span style="color: rgb(255, 24, 3);"><strong>{{ i }}</strong></span>
+            {% endfor %}
+            {% endif %}
+        </div>
+        <br>
+
+
+        <div class="data">
+            <form method="post" action="/registerdata">
+            {% csrf_token %}
+  <section>
+    <i class="fa-solid fa-user"></i>
+    <input type="text" name="first_name" placeholder="First Name" required pattern="[A-Za-z\s]{2,}" title="Only letters, min 2 characters">
+  </section>
+  <br>
+  <section>
+    <i class="fa-solid fa-user"></i>
+    <input type="text" name="last_name" placeholder="Last Name" required pattern="[A-Za-z\s]{2,}" title="Only letters, min 2 characters">
+  </section>
+  <br>
+  <section>
+    <i class="fa-solid fa-envelope"></i>
+    <input type="email" name="email" placeholder="Email ID" required>
+  </section>
+  <br>
+  <section>
+    <i class="fa-solid fa-phone"></i>
+    <input
+      type="tel"
+      name="phone"
+      pattern="[6-9]{1}[0-9]{9}"
+      maxlength="10"
+      minlength="10"
+      required
+      placeholder="Enter 10-digit mobile number"
+      title="Enter a valid 10-digit Indian mobile number starting with 6-9">
+  </section>
+  <br>
+  <section>
+    <i class="fa-solid fa-lock"></i>
+    <input
+      type="password"
+      name="password"
+      placeholder="Password"
+      id="password"
+      required
+      minlength="6"
+      pattern=".{6,}"
+      title="Password must be at least 6 characters">
+    <i class="fa-solid fa-eye-slash" id="eye" onclick="Eyeclick();"></i>
+  </section>
+  <br>
+  <section>
+    <i class="fa-solid fa-location-dot"></i>
+    <input
+      type="text"
+      name="address"
+      placeholder="Address"
+      minlength="10"
+      required
+      title="Address must be at least 10 characters">
+  </section>
+  <br><br>
+
+  <button type="submit">Submit</button>
+</form>
+
+        </div>
+        
+    </div>
+    <script src="{% static 'js/Login.js' %}"></script>
+</body>
+</html> 

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="static/img/logo.jpg">
+    <link rel="stylesheet" href="{% static 'css/Category.css' %}">
+    <title>RJ CREATIONS</title>
+</head>
+<body>
+    {% include 'Header.html' %}
+    <br>
+<span>Home  <b>> {{ selected_category.Name }} </b> </span>
+
+<br><br>
+<div class="category">
+
+    {% for i in sub_product %}
+    <div class="card">
+        
+        <a href=" "><img src="{{ i.First_Image.url }}" class="main-card" alt="Earing"></a>
+        <a href="{% url 'single_product' i.id %}"><img src="{{ i.Second_Image.url }}" class="hover-card" alt="Earing"></a>
+        <h1>{{ i.Name}}</h1>
+        <h2>₹ {{ i.Price }}</h2>
+    </div>
+    {% endfor%}
+
+</div>
+{% include 'Footer.html' %} 
+</body>
+</html>

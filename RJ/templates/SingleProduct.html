@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RJ Colection</title>
+    <link rel="stylesheet" href="{% static 'css/Singleproduct.css' %}">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" href="{% static 'img/Logo.png' %}">
+</head>
+<body>
+  {% include 'Header.html' %}
+  <br>
+ 
+    <span>Home > {{ data.Category }} > <b> {{ data.Name }} </b></span>
+  
+   <div class="product">
+   
+  <div class="images">
+    <img src="{{ data.First_Image.url }}" class="main-image" alt="Main Image">
+  </div>
+  <div class="smalling">
+    <img src="{{ data.First_Image.url }}" alt="Chain">
+    <img src="{{ data.Second_Image.url }}" alt="Earrings">
+    <div class="product ">
+    <h1>{{ data.Name }} </h1>
+    <h1>₹ {{ data.Price }}</h1>
+    </div>
+    
+  </div><br>
+  <hr style="border: 2px solid;">
+  <h1>Product Details :</h1>
+  <table>
+    <tr>
+        <th>Product Category</th>
+        <td> {{ data.Category }}</td>
+    </tr>
+    <tr>
+        <th>Material</th> 
+        <td>{{ data.Material }}</td>  
+    </tr>
+    <tr>
+        <th>Size/Lenght</th>
+        <td>{{ data.Length }}</td>
+    </tr>
+    <tr>
+        <th>waight</th>
+        <td> {{ data.Waight }}</td>
+    </tr>
+    <tr>
+        <th>Type Of Work</th>
+        <td> {{ data.Type_Of_work }}</td>
+    </tr>
+    <!-- <tr>
+        <th>Occasion</th>
+        <td>(casual)</td>
+    </tr> -->
+    <tr>
+        <th>Availability</th>
+        <td>{{ data.Availability }}</td>
+    </tr>
+     
+  </table>
+  <br>
+  {% if request.session.fname %}
+  {% if data.Availability == "Available" %}
+    <!-- <a href="{% url 'add_to_cart' data.id %}" class="cartbtn">
+      <i class="fa-solid fa-cart-plus"></i> Add To Cart
+    </a> -->
+
+    <a href="https://wa.me/919924342512/?text=🛒 *Order Details*%0A%0AName: {{ data.Name }}%0APrice: {{ data.Price }}%0ACategory: {{ data.Category }}%0AMaterial: {{ data.Material }}%0ASize/Length: {{ data.Length }}%0AType of Work: {{ data.Type_Of_work }}%0AProduct Link: {{ request.build_absolute_uri }}%0A%0A✅ *Please confirm this order.*" class="cartbtn" target="_blank">
+  <i class="fa-solid fa-cart-plus"></i> Place To Order
+</a>
+
+  {% else %}
+    <a class="cartbtn disabled" onclick="return false;" style="pointer-events: none; opacity: 0.5; cursor: not-allowed;">
+      <i class="fa-solid fa-cart-plus"></i> Not Available
+    </a>
+  {% endif %}
+{% else %}
+  <a href="/login" class="cartbtn">
+    <i class="fa-solid fa-cart-plus"></i> Add To Cart
+  </a>
+{% endif %}
+
+  <br>
+  <h1>Releted Products</h1>
+  <br>
+  <hr style="border:2px solid">
+</div>
+
+<div class="category">
+  {% for i in sub_cat %}
+  <div class="card">
+    <a href="{% url 'single_product' i.id %}"><img src="{{ i.First_Image.url }}" alt="Photo"></a>
+    <h2>{{ i.Name }}</h2>
+    <h2>₹ {{ i.Price }}</h2>
+  </div>
+  {% endfor %}
+ 
+</div>
+{% include 'Footer.html' %}
+    <script>
+  const thumbnails = document.querySelectorAll(".smalling img");
+  const mainImage = document.querySelector(".main-image");
+
+  thumbnails.forEach(thumb => {
+    thumb.addEventListener("click", () => {
+      mainImage.src = thumb.src;
+    });
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,144 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+
+    background-color: #288683;
+    color:  #ffebd0;
+    transition: 1.6s
+}
+
+#back{
+
+    font-size: 1.7rem;
+    position:absolute;
+    left: 20px;
+    top:20px;
+}
+#back:hover{
+
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+.card{
+
+    text-align: center;
+    
+}
+
+.head{
+
+    text-align: center;
+}
+.profiledata{
+
+    margin: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.data{
+
+    display: flex;
+}
+
+button{
+
+    width: 15%;
+    height: 40px;
+    border-radius: 8px;
+    background-color: #EDDDE0;
+    color: #288683;
+    font-weight: 900;
+
+}
+
+button:hover{
+
+    cursor: pointer;
+    opacity: 0.6;
+}
+
+hr{
+    margin: 20px;
+    margin-bottom: 45px;
+}
+
+.Logout{
+
+    position: absolute;
+    text-align: center;
+    z-index: 2;
+    background-color:  #ffebd0;
+    color: #288683;
+    padding: 20px;
+    border-radius: 8px;
+    width: 550px;
+    top: 40%;
+    height: 120px;
+    left: 30%;
+    display: none;
+    transition: 2s;
+    transform: scale(1.2);
+
+}
+
+.Logout h3{
+
+    margin-top: 20px;
+}
+.Logout i{
+
+    position: absolute;
+    right: 20px;
+    top:8px;
+    font-size: 1.3rem;
+}
+.Logout i:hover{
+
+    color: red;
+    cursor: pointer;
+}
+.btn a{
+
+        background-color: #288683;
+        color: #ffebd0;
+        padding: 10px;
+        padding-left: 50px;
+        padding-right: 50px;
+        border-radius: 8px;
+        text-decoration: none;
+
+}
+
+.btn a:hover{
+
+    opacity: 0.6;
+}
+
+@media only screen and (max-width:600px){
+
+    .profiledata{
+
+        display: block;
+        font-size: 0.8rem;
+    }
+
+    button{
+
+        width: 100px;
+    }
+
+    .Logout{
+
+    width: 250px;
+    top: 40%;
+    height: 120px;
+    left: 12%;
+    
+    }
+
+}

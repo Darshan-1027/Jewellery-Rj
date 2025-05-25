@@ -1,0 +1,58 @@
+<footer id="info">
+<head>
+        {% load static %}
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title> RJ CREATION </title>
+        <link rel="stylesheet" href="{% static 'css/Footer.css' %}" type="text/css">
+        <link rel="icon" href="{% static 'img/Logo.png' %}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    </head>
+    <br>
+            <footer id="info">
+
+            <div class="logo">
+               <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3671.7210143896923!2d72.46147647535808!3d23.034013579165606!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e9b9a334736f9%3A0x33fe80842169a92d!2sBopal%20Gam%20BRTS%20Station!5e0!3m2!1sen!2sin!4v1748004511440!5m2!1sen!2sin"  height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <div class="data">
+                <div class="cat">
+                    <h1>Category</h1>
+                    {% for i in category %}
+                    <a href="{% url 'products_by_category' i.id %}">{{ i.Name }}</a>
+                    {% endfor %}
+                    
+                    
+                    
+                </div>
+                <div class="cat">
+                    <h1>Informaction</h1>
+                    <a href="">Privacy Policy</a>
+                    <a href="">Terms & Conditions</a>
+                    <a href="">Payment Options</a>
+                    <a href="">Returning</a>  
+                     
+                    
+                    
+                </div>
+                 <div class="contact">
+                <h1>Contact</h1>
+                <hr>
+                <br><br>
+                 <a href="tel:+919924342512"><i class="fa-solid fa-square-phone" title="Phone No"></i> +91 9924342512</a>
+                 <br><br>
+                 <!-- <a href=""><i class="fa-solid fa-square-envelope"></i> abhi@gmail.com</a>
+                 <br>
+                 <br> -->
+                 <h2 style="color: antiquewhite;"> Chat On Whatsapp</h2><br>
+                <a href="https://wa.me/919924342512"><i class="fa-brands fa-whatsapp" title="Whatsapp Number"></i> 9924342512</a>
+                <br>
+                <br>
+                <h1>Social</h1>
+                <hr>
+                <br>
+                <a href="https://www.instagram.com/r_j_creation_2511?igsh=YjVpMzVuNmNiYWhj" title="Instgram"><i class="fa-brands fa-instagram"> Instgram</i></a>
+                </div>
+            </div>
+           
+        </footer>
+        <script src="static/js/Homepage.js"></script>
