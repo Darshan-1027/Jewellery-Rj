@@ -75,9 +75,6 @@ prometheus_client==0.21.1
 prompt_toolkit==3.0.51
 psutil==7.0.0
 pure_eval==0.2.3
-PyAudio==0.2.14
-pycparser==2.22
-pygame==2.6.0
 Pygments==2.19.1
 pypng==0.20220715.0
 python-dateutil==2.9.0.post0
