@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-+ll8c*oy%f-%o+)k*unc=$xd&(rdq_(1go4k)ic)37h67$hpu%'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -121,9 +121,12 @@ STATIC_URL = '/static/'
 
 import os
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [
-    BASE_DIR / 'RJ' / 'static',
-]
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # collectstatic will copy files here
+
+# Optional: add if not already there
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'RJ_Jewellery/static')]  # if you have static files inside apps
+
 
 STATIC_ROOT = BASE_DIR / 'staticfiles'  # Required for collectstatic
 
