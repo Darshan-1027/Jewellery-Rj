@@ -120,6 +120,9 @@ STATIC_URL = '/static/'
 
 import os
 STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+    BASE_DIR / 'RJ' / 'static',
+]
 
 STATIC_ROOT = BASE_DIR / 'staticfiles'  # Required for collectstatic
 
