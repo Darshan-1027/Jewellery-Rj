@@ -79,11 +79,13 @@ WSGI_APPLICATION = 'RJJewellery.wsgi.application'
 
 import os
 
+import dj_database_url
+import os
+
 DATABASES = {
-    'default': dj_database_url.config(
-        default='sqlite:///' + str(BASE_DIR / 'db.sqlite3')
-    )
+    'default': dj_database_url.parse('postgresql://jewellery_db_rc22_user:Rngu4lwWgMJgI3BjtYLEHdUJj8h8f9Sh@dpg-d0qv0n2dbo4c73cenm1g-a.oregon-postgres.render.com/jewellery_db_rc22')
 }
+
 
 
 
