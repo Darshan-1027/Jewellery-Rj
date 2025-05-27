@@ -15,7 +15,8 @@ cffi==1.17.1
 chardet==5.2.0
 charset-normalizer==3.3.2
 colorama==0.4.6
-dj-database-url
+dj-database-url==2.1.0
+psycopg2-binary==2.9.9
 comm==0.2.2
 comtypes==1.4.7
 cryptography==44.0.2
@@ -73,7 +74,6 @@ parso==0.8.4
 phonenumbers==8.13.53
 pillow==10.4.0
 platformdirs==4.3.7
-psycopg2-binary
 prometheus_client==0.21.1
 prompt_toolkit==3.0.51
 psutil==7.0.0
