@@ -77,9 +77,7 @@ WSGI_APPLICATION = 'RJJewellery.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
-import os
 
-import dj_database_url
 import os
 
 DATABASES = {
@@ -141,7 +139,7 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'  # Required for collectstatic
 
 
 
-MEDIA_URL = '/media/'
+MEDIA_URL = 'RJ_Jewellery/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
 
