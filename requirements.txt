@@ -16,7 +16,6 @@ cffi==1.17.1
 chardet==5.2.0
 charset-normalizer==3.3.2
 colorama==0.4.6
-dj-database-url==2.1.0
 psycopg2-binary==2.9.9
 comm==0.2.2
 comtypes==1.4.7
